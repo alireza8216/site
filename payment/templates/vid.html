@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        {% for i in vides %}
+        <h1>{{ i.name }}</h1>
+        <video width="320" height="240" controls >
+            <source src={{ i.path }} type="video/mp4">
+        </video>
+        {% endfor %}
+    </body>
+</html>

@@ -42,50 +42,28 @@
 				<nav class="navbar">
 					<div class="container-fluid">
 						<!-- Brand and toggle get grouped for better mobile display -->
-						<div class="navbar-header">
-							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							</button>
-						</div>
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 							<ul class="nav navbar-nav navbar-right">
-								<li><a href="index.html">Home</a></li>
+								<li><a href="index.html">خانه</a></li>
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Portfolio <span class="ion-ios-arrow-down"></span></a>
 									<ul class="dropdown-menu">
-										<li><a href="portfolio.html">Portfolio Filter</a></li>
-										<li><a href="portfolio-single.html">Portfolio Single</a></li>
-									</ul>
+										<li><a href={% url 'all_products' %}>گالری </a></li>
 								</li>
-								<li><a href="service.html">Service</a></li>
-								<li class="dropdown">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog <span class="ion-ios-arrow-down"></span></a>
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">مقالات <span class="ion-ios-arrow-down"></span></a>
 									<ul class="dropdown-menu">
-										<li><a href="blog-grid.html">Blog Grid</a></li>
-										<li><a href="blog-single.html">Blog Single</a></li>
-										<li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
-										<li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
-										<li><a href="blog-full-width.html">Blog Full Width</a></li>
+										<li><a href={% url 'detail' %}>مقالات</a></li>
 									</ul>
 								</li>
-								<li class="dropdown">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pages <span class="ion-ios-arrow-down"></span></a>
-									<ul class="dropdown-menu">
-										<li><a href="about.html">About Us</a></li>
-										<li><a href="coming-soon.html">Coming Soon</a></li>
-										<li><a href="404.html">404 Page</a></li>
-										<li><a href="faq.html">FAQ</a></li>
-										<li><a href="pricing.html">Pricing Table</a></li>
-									</ul>
-								</li>
-								<li><a href="contact.html">Contact</a></li>
+								<li><a href={% url 'contact' %}>ارتباط با ما</a></li>
 							</ul>
 							</div><!-- /.navbar-collapse -->
 							</div><!-- /.container-fluid -->
+              <li><a href={% url 'logout' %}>خروج</a></li>
+              <li>
+                خوش امدید {{ username }}
+              </li>
 						</nav>
 					</div>
 				</div>
@@ -98,8 +76,8 @@
 		<div class="row">
 			<div class="col-md-12">
 				<div class="block">
-					<h1 class="animated fadeInUp">A Digital Marketing <br>  &#38; Design Agency</h1>
-					<p class="animated fadeInUp">We love the Web and the work we do.We work closely with our clients to deliver </br>  the best possible solutions for their needs</p>
+					<h1 class="animated fadeInUp">مربی ورزشی و غذایی <br>  &#38;باشگاه باران</h1>
+					<p class="animated fadeInUp">اراعه ی انواع برنامه های ورزشی و غذایی برای همه ی سطوح </p>
 					<a href="https://themefisher.com/free-bootstrap-templates/" target="_blank" class="btn btn-main animated fadeInUp" >Free Bootstrap Templates</a>
 				</div>
 			</div>

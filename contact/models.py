@@ -7,3 +7,4 @@ class massage (models.Model):
     subject = models.CharField(max_length=20000)
     text = models.TextField(max_length=500000)
     date = models.DateField(default=timezone.now())
+    profile = models.ImageField(upload_to = 'user pics/',null=True,blank=True)

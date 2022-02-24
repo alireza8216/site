@@ -1,0 +1,28 @@
+{% load static %}
+<link rel="stylesheet" href={% static 'css/hi.css' %}>
+<div class="container">
+  <div class="row">
+      <div class="col-md-6">
+          <div class="card">
+            <form class="box" method="post" action="{% url 'login' %}">
+              {% csrf_token %}
+              <p class="text-muted"> لطفا پسورد و نام کاربری خود را وارد کنید</p>
+              <table>
+                <tr>
+                  <td>{{ form.username.label_tag }}</td>
+                  <td>{{ form.username }}</td>
+                </tr>
+                <tr>
+                  <td>{{ form.password.label_tag }}</td>
+                  <td>{{ form.password }}</td>
+                </tr>
+              </table>
+              <input type="submit" value="login" />
+              <input type="hidden" name="next" value="{{ next }}" />
+              <a class="forgot text-muted" href={% url 'password_reset' %}>ایا رمز خود را فراموش کرده اید؟</a>
+              <a class="forgot text-muted" href={% url 'signup' %}>ثبت نام کنید</a>
+            </form>
+          </div>
+      </div>
+  </div>
+</div><a class="forgot text-muted" href={% url 'password_reset' %}>ایا رمز خود را فراموش کرده اید؟</a>

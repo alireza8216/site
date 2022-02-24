@@ -2,14 +2,15 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700);
 @import url(https://fonts.googleapis.com/css?family=Oswald:300,400,500,600);
 @import url(http://fonts.googleapis.com/css?family=Volkhov:400italic);
+@import url(static\css\B Nazanin_p30download.com.ttf);
 body {
   line-height: 1.5;
-  font-family: "Roboto", sans-serif;
+  font-family: "B Nazanin_p30download.com";
   -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Roboto", sans-serif;
+  font-family: "B Nazanin_p30download.com";
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -2632,7 +2633,14 @@ font header .navbar-default .navbar-nav li a:hover {
     line-height: 150px;
   }
 }
+@font-face {
+  font-family: 'b_nazaninregular';
+  src: url('b_nazanin_p30download.com-webfont.woff2') format('woff2'),
+       url('b_nazanin_p30download.com-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 
+}
 @media (max-width: 400px) {
   .page-404 h1 {
     font-size: 100px;

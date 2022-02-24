@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'bootstrap_admin', 
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -41,6 +42,8 @@ INSTALLED_APPS = [
     'contact',
     'blog',
     'producs',
+    'azbankgateways',
+    'payment',
 ]
 
 MIDDLEWARE = [
@@ -58,7 +61,7 @@ ROOT_URLCONF = 'shop.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -107,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'fa'
 
 TIME_ZONE = 'UTC'
 
@@ -128,7 +131,34 @@ STATICFILES_DIRS = ( os.path.join('staticfile'), )
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-#email setting
+#media files
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+
+MEDIA_URL = '/media/'
+
+
+#email settingEMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
 EMAIL_HOST_USER = 'a8888ralireza@gmail.com'
 EMAIL_HOST_PASSWORD = 'a8888r1234'
 
+#bank setting
+
+AZ_IRANIAN_BANK_GATEWAYS = {
+   'GATEWAYS': {
+       'MELLAT': {
+           'TERMINAL_CODE': 102903901280389,
+           'USERNAME': 129830820,
+           'PASSWORD': 8719739827,
+       },
+   },
+   'DEFAULT': 'MELLAT',
+   'CURRENCY': 'IRR', # اختیاری
+   'TRACKING_CODE_QUERY_PARAM': 'tc', # اختیاری
+   'TRACKING_CODE_LENGTH': 16, # اختیاری
+   'SETTING_VALUE_READER_CLASS': 'azbankgateways.readers.DefaultReader', # اختیاری
+   'BANK_PRIORITIES': [
+   ], # اختیاری
+}

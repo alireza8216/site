@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <h1>hi this is massages</h1>
+    </head>
+    <body>
+        {% for message in all_message%}
+            <h2> {{message.name}} </h2>
+            <h3> {{ message.subject }} </h3>
+            <p> {{ message.text }} </p>
+            <img src={{ message.profile }} alt="profile pic">
+        {% endfor %}
+    </body>
+</html>

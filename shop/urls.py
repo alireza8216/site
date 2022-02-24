@@ -17,11 +17,16 @@ from django.contrib import admin
 from django.urls import path,include
 from django.conf.urls.static import static
 from django.conf import settings
+import django
+from azbankgateways.urls import az_bank_gateways_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('hom.urls')),
     path('products/',include('producs.urls')),
     path('blog/',include('blog.urls')),
-    path('contact/',include('contact.urls'))
-]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    path('contact/',include('contact.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('bankgateways/', az_bank_gateways_urls()),
+    path('pay/',include('payment.urls')),
+]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
